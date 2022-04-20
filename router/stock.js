@@ -8,6 +8,6 @@ router.get("/stock", Controller.stock)
 
 router.post("/watchlist/:stock", Controller.watchlist)
 
-router.destroy("/watchlist/delete/:id", Controller.delete)
+router.delete("/watchlist/delete/:id", Controller.delete)
 
 module.exports = router 

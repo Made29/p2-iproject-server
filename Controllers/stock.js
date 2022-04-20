@@ -19,7 +19,12 @@ class Controller{
 
     static async stockWatchlist (req, res, next){
         try{
-            const watchlist = await Watchlist.findAll()
+            const watchlist = await Watchlist.findAll({
+                attributes: {
+                    exclude: ["createdAt", "updatedAt"]
+                },
+                order: [["stock", "ASC"]]
+            })
             res.send(watchlist)
         }catch(error){
             next(error)
@@ -44,7 +49,8 @@ class Controller{
             }
 
             const data = await Watchlist.destroy({ where: { id: findData.id } })
-            res.send(data)
+            console.log("data: ", data);
+            res.status(200).json({ message: `success delete stock from watchlist`  })
         }catch(error){
             next(error)
         }
