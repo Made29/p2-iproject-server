@@ -7,7 +7,7 @@ const errorHandler = async (error, req, res, next) => {
         error.message === "SequelizeUniqueConstraintError"
     ) {
         status = 400;
-        msg = error.errors[0].message;
+        msg = error.errors.map(el => ( el.message ))
     } else if (error.message === "INVALID_TOKEN") {
         status = 401;
         msg = "Invalid token";

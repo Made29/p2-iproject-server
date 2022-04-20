@@ -13,9 +13,9 @@ class Controller {
     
             const resp = await i.createInvoice({
                 externalID: "TOPUP" + new Date(),
-                amount: 100000,
+                amount: Math.floor(Math.random() * (2000000 - 100000 + 1)) + 100000,
                 description: "Terima Kasih telah TOP UP",
-                invoice_duration: 86400,
+                invoice_duration: 86400
             });
 
             res.send(resp)
