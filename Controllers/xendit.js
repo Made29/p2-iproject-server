@@ -20,7 +20,7 @@ class Controller {
 
             res.send(resp)
         }catch(error){
-            console.log(error)
+            next(error)
         }
 
     }

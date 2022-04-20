@@ -49,7 +49,6 @@ class Controller{
             }
 
             const data = await Watchlist.destroy({ where: { id: findData.id } })
-            console.log("data: ", data);
             res.status(200).json({ message: `success delete stock from watchlist`  })
         }catch(error){
             next(error)
