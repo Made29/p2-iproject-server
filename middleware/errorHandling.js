@@ -11,8 +11,10 @@ const errorHandler = async (error, req, res, next) => {
     } else if (error.message === "INVALID_TOKEN") {
         status = 401;
         msg = "Invalid token";
+    }else if (error.message === "USER_NOT_FOUND") {
+        status = 401;
+        msg = "Invalid token";
     }
-
     res.status(status).json({ message: msg });
 };
 

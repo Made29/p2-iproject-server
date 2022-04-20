@@ -2,10 +2,12 @@ const express = require("express")
 const router = express.Router()
 const Controller = require("../Controllers/stock")
 
-// router.get("/---", Controller.stock)
+router.get("/watchlist", Controller.stockWatchlist)
 
-// router.post("/watchList/")
+router.get("/stock", Controller.stock)
 
-router.get("/watchList", Controller.watchList)
+router.post("/watchlist/:stock", Controller.watchlist)
+
+router.destroy("/watchlist/delete/:id", Controller.delete)
 
 module.exports = router 

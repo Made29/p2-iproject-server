@@ -4,8 +4,8 @@ const router = express.Router();
 const stock = require("./stock");
 const user = require("./user");
 
-router.use(authentication, stock);
-
 router.use(user);
+
+router.use(authentication, stock);
 
 module.exports = router;
