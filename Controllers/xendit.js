@@ -24,7 +24,7 @@ class Controller {
                 amount: found.Last * 100,
                 description: "Terima Kasih telah TOP UP",
                 invoice_duration: 86400,
-                successRedirectURL: "http://localhost:8000"
+                successRedirectURL:  "https://stock-view-92cae.web.app" //"http://localhost:8000"
             });
 
             res.send(resp)
