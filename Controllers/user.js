@@ -9,6 +9,23 @@ class Controller {
         try {
             const newUser = await User.create({ username, email, password });
 
+            // let transporter = nodemailer.createTransport({
+            //     service: "hotmail",
+            //     auth: {
+            //         user: "StockViewProject.outlook.com",
+            //         pass: "Madejwk99"
+            //     }
+            // });
+            // if (selectedItinerary) {
+            //     let info = await transporter.sendMail({
+            //         from: 'dimaskurniawan0000@outlook.co.id', // sender address
+            //         to: customerEmail, // list of receivers
+            //         subject: "Registration Information", // Subject line
+            //         text: "Wellcome to Stock View", // plain text body
+            //     });
+            //     console.log(info, "success send email");
+            // }
+
             res.status(201).json({
                 id: newUser.id,
                 username: newUser.username,
